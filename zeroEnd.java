@@ -12,15 +12,28 @@ public class zeroEnd {
      
         //Bruite force approach //
         
-       int arr1[]= new int[arr.length];
-        int k=0;
-        for(int i: arr){
-            if(i!= 0){
-                arr1[k]=i;
-                k++;
-            }
-        }
-        return arr1;
+    //    int arr1[]= new int[arr.length];
+    //     int k=0;
+    //     for(int i: arr){
+    //         if(i!= 0){
+    //             arr1[k]=i;
+    //             k++;
+    //         }
+    //     }
+    //     return arr1;
+    //   }
 
-    }
+    //OPTIMAL APROAch //
+
+    int k=0;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]!=0){
+           int  temp=arr[i];
+             arr[i]=arr[k];
+             arr[k]=temp;
+            k++;
+        }
+     }
+      return arr;
+   }
 }
